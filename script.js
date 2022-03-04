@@ -3,5 +3,5 @@ const countdownForm = document.getElementById("countdownForm");
 const dateEl = document.getElementById("date-picker");
 
 // set date input min with todays date
-const tday = new Date().toISOString();
+const today = new Date().toISOString().split("T")[0];
 console.log(today);
