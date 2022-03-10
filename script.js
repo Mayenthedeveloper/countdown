@@ -3,6 +3,8 @@ const countdownForm = document.getElementById("countdownForm");
 const dateEl = document.getElementById("date-picker");
 const countdownEl = document.getElementById("countdown");
 const countdownElTitle = document.getElementById("coutdown-title");
+const countdownElBtn = document.getElementById("coutdown-button");
+const timeElements = document.querySelectorAll("span");
 
 let countdownTitle = "";
 let countdownDate = "";
