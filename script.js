@@ -14,6 +14,13 @@ let countdownValue = Date;
 const today = new Date().toISOString().split("T")[0];
 dateEl.setAttribute("min", today);
 
+// populate countdown /complete UI
+function updateDOM() {
+  const now = new Date().getTime();
+  const distance = countdownValue - now;
+  console.log("distance", distance);
+}
+
 //take values form input
 function updateCountdown(e) {
   e.preventDefault();
@@ -24,6 +31,7 @@ function updateCountdown(e) {
   // get number vrsion of current date, updatedom
   countdownValue = new Date(countdownDate).getTime();
   console.log(countdownValue, "countdownValue");
+  updateDOM();
 }
 
 // event listener
