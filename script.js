@@ -10,6 +10,11 @@ let countdownTitle = "";
 let countdownDate = "";
 let countdownValue = Date;
 
+const second = 1000;
+const min = second * 60;
+const hour = minute * 60;
+const day = hour * 24;
+
 // set date input min with todays date
 const today = new Date().toISOString().split("T")[0];
 dateEl.setAttribute("min", today);
@@ -19,6 +24,24 @@ function updateDOM() {
   const now = new Date().getTime();
   const distance = countdownValue - now;
   console.log("distance", distance);
+
+  const days = Math.floor(distance / day);
+  const hours = Math.floor((distance % day) / hour);
+  const minutes = Math.floor((distance % hour) / minute);
+  const seconds = Math.floor((distance % minute) / second);
+  console.log(days, hours, minutes, seconds);
+
+  // populating countdown
+  countdownElTitle.textContent = `${countdownTitle}`;
+  timeElements[0].textContent = `${days}`;
+  timeElements[1].textContent = `${hours}`;
+  timeElements[2].textContent = `${minutes}`;
+  timeElements[3].textContent = `${seconds}`;
+
+  //hide input
+  inputContainer.hidden = true;
+  //show countdown
+  countdownEl.hidden = false;
 }
 
 //take values form input
