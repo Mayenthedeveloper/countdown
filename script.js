@@ -167,7 +167,7 @@ function updateCountdown(e) {
   countdownDate = e.srcElement[1].value;
 
   console.log(countdownDate, countdownTitle);
-  // get number vrsion of current date, updatedom
+  // get number version of current date, updateDOM
   countdownValue = new Date(countdownDate).getTime();
   console.log(countdownValue, "countdownValue");
   updateDOM();
